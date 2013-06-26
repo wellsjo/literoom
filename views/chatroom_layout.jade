@@ -1,0 +1,20 @@
+doctype 5
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/chatroom.css')
+    
+    script
+      var chatroom_theme = '#{theme}';
+      var show_connected_users = '#{show_connected_users}';
+      var room_width = '#{room_width}';
+      var font_size = '#{font_size}';
+
+    script(src='/socket.io/socket.io.js')
+    script(src='/javascripts/jquery.js')
+    script(src='/javascripts/settings.js')
+    script(src='/javascripts/global.js')
+    script(src='/javascripts/chatroom.js')
+
+  body
+    block content

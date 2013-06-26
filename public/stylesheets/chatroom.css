@@ -1,0 +1,141 @@
+body {
+	margin:0px;
+   	font: 15px "gotham", sans-serif;
+	color:black;
+	background-color:white;
+}
+
+#joined_as {
+	position:relative;
+	float:left;
+	left:10px;
+}
+
+#user_color {
+	position: relative;
+	right: -20px;
+}
+
+#room_header {
+	float:left;	
+}
+
+#join_room {
+	color: white;
+	font-weight: bold;
+	text-align: center;
+
+	background: #258dc8; /* Old browsers */
+	background: -moz-linear-gradient(top,  #258dc8 0%, #258dc8 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#258dc8), color-stop(100%,#258dc8)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #258dc8 0%,#258dc8 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #258dc8 0%,#258dc8 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #258dc8 0%,#258dc8 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #258dc8 0%,#258dc8 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#258dc8', endColorstr='#258dc8',GradientType=0 ); /* IE6-9 */
+
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	left: 0px;
+	bottom: 0px;
+	padding-top: 17%;
+}
+
+#join_room_button {
+	width: 35px;
+	height: 22px;
+	background-color: lightgray;
+	border: none;
+}
+
+#join_room > p {
+	font-size:20px;
+}
+
+
+#container {
+	display:none;
+	position: relative;
+	height:340px;
+}
+
+#room {
+	position: relative;
+	float:left;
+	height:327px;
+
+	left:0px;
+	bottom:0px;
+	top:0px;
+
+	border: 1px solid lightgray;
+	padding: 5px;
+}
+
+#users {
+	position:relative;
+	overflow:auto;
+
+	left:0px;
+	right:0px;
+	top:0px;
+	bottom:0px;
+	height:297px;
+
+	text-align:center;
+	padding: 20px;
+	border: 1px solid lightgray;
+	border-left:0px;
+}
+
+#message {
+	position: absolute;
+	right: 40px;
+	left: 40px;
+	height: 50px;
+	border-color: lightgray;
+	font: 15px "helvetica", sans-serif;
+}
+
+#send_message {
+	background-color: lightgray;
+	border: 1px solid gray;
+	padding: 7px;
+	font-size: 13px;
+	position: absolute;
+	right: 4px;
+	bottom:8px;
+}
+
+#press_enter {
+	position: absolute;
+	font-size:12px;
+	right:73px;
+	bottom: 3px;
+}
+
+#chatbox {
+	font-size:15px;
+	height: 200px;
+	border: 1px solid lightgray;
+	overflow: auto;
+	padding-left: 10px;
+	margin: 6px;
+}
+
+.user_name {
+	margin-top:5px;
+	font-weight:bold;
+}
+
+.user_typing {
+	display:none;
+	color:gray;
+	font-weight:normal;
+}
+
+.system_message {
+	font-style: italic;
+	color:gray;
+}

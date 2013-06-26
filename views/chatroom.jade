@@ -1,0 +1,21 @@
+extends chatroom_layout
+
+block content
+  #join_room
+    p join the #{title} chatroom as
+    input#user_handle
+    button#join_room_button Go
+  #container
+    #room
+      #room_header
+      #joined_as
+      #user_color
+      p#chatbox
+      textarea#message()
+      br
+      button#send_message Send
+      p#press_enter press 'Enter' or click Send 
+    #users
+      b Users
+      hr
+      #user_list
