@@ -19,10 +19,6 @@ var room_data = []; // an array containing all the room data
 
 io.sockets.on('connection', function (socket) {
 
-	//setInterval(function() {
-		//socket.emit('sync_chatroom_members', room_data[socket._room]);
-	//}, 30000);
-
 	socket.on('join_room', function(data) {
 		socket._handle = data.handle;
 		socket._room = data.chatroom;
