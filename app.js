@@ -10,11 +10,6 @@ path = require('path');
 var check = require('validator').check,
     sanitize = require('validator').sanitize;
 
-io.configure(function () {
-	io.set("transports", ["xhr-polling"]);
-	io.set("polling duration", 10);
-});
-
 var room_data = []; // an array containing all the room data
 
 io.sockets.on('connection', function (socket) {
