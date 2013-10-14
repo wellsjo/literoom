@@ -5,16 +5,14 @@ html
     link(rel='stylesheet', href='/stylesheets/chatroom.css')
     
     script
-      var chatroom_theme = '#{theme}';
-      var show_connected_users = '#{show_connected_users}';
-      var room_width = '#{room_width}';
-      var font_size = '#{font_size}';
+      literoomjs = {};
+      literoomjs.chatroom_theme = '#{theme}';
+      literoomjs.show_connected_users = '#{show_connected_users}';
+      literoomjs.room_width = '#{room_width}';
+      literoomjs.font_size = '#{font_size}';
 
     script(src='/socket.io/socket.io.js')
-    script(src='/javascripts/jquery.js')
-    script(src='/javascripts/settings.js')
-    script(src='/javascripts/global.js')
     script(src='/javascripts/chatroom.js')
 
-  body
+  body(id="literoomjs", onload="ready()")
     block content
