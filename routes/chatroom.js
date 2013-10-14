@@ -11,13 +11,22 @@ exports.create_room = function(req, res){
 	// check to see if there was a theme parameter added
 	var theme = 'light';
 	var show_connected_users = 'true';
-	var room_width = '684';
+	var room_width = 450;
 	var font_size = '15';
 
 	if (url_parts.query) {
+		if (url_parts.query.room_width) {
+			if(parseInt(url_parts.query.room_width) < 450) {
+				room_width = '450'
+			}else if(parseInt(url_parts.query.room_width) > 1000) {
+				room_width = '1000';
+			}else{
+				room_width = url_parts.query.room_width;
+			}
+		}
+
 		if (url_parts.query.theme) theme = url_parts.query.theme;			
 		if (url_parts.query.show_connected_users) show_connected_users = url_parts.query.show_connected_users;
-		if (url_parts.query.room_width) room_width = url_parts.query.room_width;
 		if (url_parts.query.font_size) font_size = url_parts.query.font_size
 	}
 
