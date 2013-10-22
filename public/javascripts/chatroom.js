@@ -6,9 +6,10 @@ var literoomjs = (function(lrjs) {
 	var colors = ["#00ffff", "#f5f5dc", "#0000ff", "#00ffff", "#F0E68C", "#9932cc", "#e9967a", "#9400d3", "#ff00ff", "#ffd700", "#008000", "#add8e6", "#90ee90", "#ff00ff", "#808000", "#ffa500", "#ffc0cb", "#ff0000"];
 
 	var settings = {
+		host_type: 'development',
 		host: {
 			development: 'http://localhost:4000',
-			production: 'http://your-server.com/'
+			production: 'http://infinite-depths-4551.herokuapp.com/'
 		},
 		chatroom_name: (function() {
 			var name = document.URL.substring(document.URL.lastIndexOf('/') + 1);
@@ -26,7 +27,7 @@ var literoomjs = (function(lrjs) {
 		}())
 	};
 
-	var socket = io.connect(settings.host.development);
+	var socket = io.connect(settings.host[settings.host_type]);
 
 	socket.on('sync_chatroom_members', function(members){
 		if (localStorage.getItem('lrjs-room') !== JSON.stringify(members)) {
@@ -85,10 +86,10 @@ var literoomjs = (function(lrjs) {
 
 	function add_message(message, type) {
 		if (type == 'system') {
-			chatbox.innerHTML += '<br/><span class=\'system_message\'>' + message + '</span>';		
+			chatbox.innerHTML += '<div class=\'system_message\'>' + message + '</div>';		
 		}else if (type == 'user') {
 			message = linkify(message);
-			chatbox.innerHTML += '<br/><span class=\'user_message\'>' + message + '</span>';
+			chatbox.innerHTML += '<div class=\'user_message\'>' + message + '</div>';
 		}
 		chatbox.scrollTop = chatbox.scrollHeight;
 	}
