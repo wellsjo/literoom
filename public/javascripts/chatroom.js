@@ -5,7 +5,7 @@ var literoomjs = (function(lrjs) {
 
 	var colors = ["#00ffff", "#f5f5dc", "#0000ff", "#00ffff", "#F0E68C", "#9932cc", 
 		"#e9967a", "#9400d3", "#ff00ff", "#ffd700", "#008000", "#add8e6", "#90ee90",
-	    "#ff00ff", "#808000", "#ffa500", "#ffc0cb", "#ff0000"];
+		"#ff00ff", "#808000", "#ffa500", "#ffc0cb", "#ff0000"];
 
 	var settings = {
 		use_localhost: true,
