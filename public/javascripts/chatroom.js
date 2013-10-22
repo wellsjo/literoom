@@ -9,7 +9,7 @@ var literoomjs = (function(lrjs) {
 		host_type: 'development',
 		host: {
 			development: 'http://localhost:4000',
-			production: 'http://infinite-depths-4551.herokuapp.com/'
+			production: 'http://your-server.com/'
 		},
 		chatroom_name: (function() {
 			var name = document.URL.substring(document.URL.lastIndexOf('/') + 1);
