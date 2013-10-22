@@ -1,13 +1,15 @@
 var literoomjs = (function(lrjs) {
 
-	var chatroom_body, users, user_list, room, join_room_button, send_message_button, message_input, chatbox;
+	var chatroom_body, users, user_list, room, join_room_button, 
+		send_message_button, message_input, chatbox;
 
-	var colors = ["#00ffff", "#f5f5dc", "#0000ff", "#00ffff", "#F0E68C", "#9932cc", 
-		"#e9967a", "#9400d3", "#ff00ff", "#ffd700", "#008000", "#add8e6", "#90ee90",
-		"#ff00ff", "#808000", "#ffa500", "#ffc0cb", "#ff0000"];
+	var colors = ["#00ffff", "#f5f5dc", "#0000ff", "#00ffff", "#F0E68C", "#9932cc", "#e9967a", "#9400d3", "#ff00ff", "#ffd700", "#008000", "#add8e6", "#90ee90", "#ff00ff", "#808000", "#ffa500", "#ffc0cb", "#ff0000"];
 
 	var settings = {
-		use_localhost: true,
+		host: {
+			development: 'http://localhost:4000',
+			production: 'http://your-server.com/'
+		},
 		chatroom_name: (function() {
 			var name = document.URL.substring(document.URL.lastIndexOf('/') + 1);
 			if (name.indexOf('?') != -1) name = name.substring(0, name.indexOf('?'));
@@ -24,7 +26,7 @@ var literoomjs = (function(lrjs) {
 		}())
 	};
 
-	var socket = settings.use_localhost ? io.connect('http://localhost:4000') : io.connect('http://your-server.com/');
+	var socket = io.connect(settings.host.development);
 
 	socket.on('sync_chatroom_members', function(members){
 		if (localStorage.getItem('lrjs-room') !== JSON.stringify(members)) {
