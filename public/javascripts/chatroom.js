@@ -1,7 +1,6 @@
 var literoomjs = (function(lrjs) {
 
-	var chatroom_body, users, user_list, room, join_room_button, 
-		send_message_button, message_input, chatbox;
+	var chatroom_body, users, user_list, room, join_room_button, send_message_button, message_input, chatbox;
 
 	var colors = ["#00ffff", "#f5f5dc", "#0000ff", "#00ffff", "#F0E68C", "#9932cc", 
 		"#e9967a", "#9400d3", "#ff00ff", "#ffd700", "#008000", "#add8e6", "#90ee90",
