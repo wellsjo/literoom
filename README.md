@@ -1,4 +1,4 @@
-literoom.js
+literoom
 ===========
 
 literoom.js is a lightweight, customizable, real-time chatroom written in node using Socket.io.
